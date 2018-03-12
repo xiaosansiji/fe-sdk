@@ -1,0 +1,34 @@
+{
+  "name": "fe-sdk",
+  "version": "0.0.1",
+  "description": "a FE performance colletion lib",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaosansiji/fe-sdk.git"
+  },
+  "keywords": [
+    "web",
+    "performance"
+  ],
+  "author": "xiaosansiji",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xiaosansiji/fe-sdk/issues"
+  },
+  "homepage": "https://github.com/xiaosansiji/fe-sdk#readme",
+  "devDependencies": {
+    "rollup": "^0.50.0",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build"
+  },
+  "files": [
+    "dist"
+  ]
+}
