@@ -2,7 +2,7 @@
   "name": "fe-sdk",
   "version": "0.0.1",
   "description": "a FE performance colletion lib",
-  "main": "index.js",
+  "main": "src/main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xiaosansiji/fe-sdk.git"
@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/xiaosansiji/fe-sdk#readme",
   "devDependencies": {
-    "rollup": "^0.50.0",
-    "rollup-plugin-commonjs": "^8.2.6",
+    "babel-preset-env": "^1.6.0",
+    "rollup": "^0.46.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0"
   },
   "scripts": {
