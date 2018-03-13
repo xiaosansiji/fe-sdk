@@ -1,0 +1,50 @@
+
+const utils = {
+    stringify: function (obj) {
+        if (window.JSON && window.JSON.stringify) {
+            return JSON.stringify(obj)
+        }
+        var t = typeof (obj)
+        if (t != "object" || obj === null) {
+            // simple data type
+            if (t == "string") obj = '"' + obj + '"'
+            return String(obj)
+        } else {
+            // recurse array or object
+            var n, v, json = [],
+                arr = (obj && obj.constructor == Array)
+
+            // fix.
+            var self = arguments.callee
+
+            for (n in obj) {
+                if (obj.hasOwnProperty(n)) {
+
+                    v = obj[n]
+                    t = typeof (v)
+                    if (obj.hasOwnProperty(n)) {
+                        if (t == "string") v = '"' + v + '"'
+                        else if (t == "object" && v !== null)
+                            // v = jQuery.stringify(v)
+                            v = self(v)
+                        json.push((arr ? "" : '"' + n + '":') + String(v))
+                    }
+                }
+            }
+            return (arr ? "[" : "{") + String(json) + (arr ? "]" : "}")
+        }
+    },
+    assignObject: function (obj1, obj2) {
+        for (let name in obj2) {
+            if (obj2.hasOwnProperty(name)) {
+                obj1[name] = obj2[name]
+            }
+        }
+        return obj1
+    },
+    genUserID: function (randomLength) {
+        return Number(Math.random().toString().substr(3, randomLength) + Date.now()).toString(36)
+    },
+}
+
+export default utils

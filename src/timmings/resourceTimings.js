@@ -8,7 +8,7 @@ export default function resourceTimings () {
         for (const resource of timings) {
             resources.push({
                 name: resource.name,
-                duration: Number(resource.duration.toFixed(2))
+                duration: Number(resource.duration.toFixed(2)),
             })
         }
     }

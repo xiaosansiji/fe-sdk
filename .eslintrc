@@ -10,7 +10,6 @@
             "always-multiline"
         ],
         "max-len": 0,
-        "react/jsx-first-prop-new-line": 0,
         "space-before-function-paren": [
             2,
             "always"

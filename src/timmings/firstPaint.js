@@ -1,6 +1,5 @@
 export default function firstPaint () {
-    let firstPaint,
-        p = window.performance,
+    let p = window.performance,
         timing = p.timing,
         entries = p.getEntriesByType('paint')
 

@@ -10,8 +10,8 @@ export default [
         format: 'umd',
         moduleName: 'fesdk',
         plugins: [
-            resolve(), // so Rollup can find `ms`
-            commonjs(), // so Rollup can convert `ms` to an ES module
+            resolve(), // so Rollup can find third party dependency
+            commonjs(), // so Rollup can convert third party dependency to an ES module
             babel({
                 exclude: ['node_modules/**']
             })
