@@ -1,5 +1,19 @@
 
 const utils = {
+    typeDecide: function (o, type) {
+        return Object.prototype.toString.call(o) === "[object " + type + "]"
+    },
+    serializeObj: function (obj) {
+        let parames = ''
+        Object.keys(obj).forEach(name => {
+            if (utils.typeDecide(obj[name], 'Object')) {
+                parames += name + '=' + utils.stringify(obj[name])
+            } else {
+                parames += name + '=' + obj[name] + '^'
+            }
+        })
+        return encodeURIComponent(parames.substr(0, parames.length - 1))
+    },
     stringify: function (obj) {
         if (window.JSON && window.JSON.stringify) {
             return JSON.stringify(obj)
